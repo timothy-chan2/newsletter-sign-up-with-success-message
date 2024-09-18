@@ -11,73 +11,46 @@
 <body>
   <!-- Sign-up form start -->
   <article id="signUpForm">
-    <h1>Stay updated!</h1>
-    <p>Join 60,000+ product managers receiving monthly updates on:</p>
-    <ul>
-      <li>Product discovery and building what matters</li>
-      <li>Measuring to ensure updates are a success</li>
-      <li>And much more!</li>
-    </ul>
-    <form id="emailForm">
-      <div id="labels">
-        <label for="email">Email address</label>
-        <p id="error">Valid email required</p>
-      </div>
-      <input type="email" id="email" name="email" placeholder="email@company.com" required>
-      <input type="submit" id="formSubmit" value="Subscribe to monthly newsletter">
-    </form>
+    <img id="mobileImg" src="assets/images/illustration-sign-up-mobile.svg" alt="">
+    <div>
+      <h1>Stay updated!</h1>
+      <p>Join 60,000+ product managers receiving monthly updates on:</p>
+      <ul>
+        <li>
+          <img src="assets/images/icon-list.svg" alt="Small check mark inside a circle">
+          <p>Product discovery and building what matters</p>
+        </li>
+        <li>
+          <img src="assets/images/icon-list.svg" alt="Small check mark inside a circle">
+          <p>Measuring to ensure updates are a success</p>
+        </li>
+        <li>
+          <img src="assets/images/icon-list.svg" alt="Small check mark inside a circle">
+          <p>And much more!</p>
+        </li>
+      </ul>
+      <form id="emailForm">
+        <div id="labels">
+          <label for="email">Email address</label>
+          <p id="error">Valid email required</p>
+        </div>
+        <input type="email" id="email" name="email" placeholder="email@company.com" required>
+        <input type="submit" id="formSubmit" value="Subscribe to monthly newsletter">
+      </form>
+    </div>
+    <img id="desktopImg" src="assets/images/illustration-sign-up-desktop.svg" alt="">
   </article>
   <!-- Sign-up form end -->
 
   <!-- Success message start -->
   <article id="successMessage">
+    <img src="assets/images/icon-success.svg" alt="Big check mark inside a circle">
     <h2>Thanks for subscribing!</h2>
     <p>A confirmation email has been sent to <b id="userEmail"></b>. Please open it and click the button inside to confirm your subscription.</p>
     <button id="dismiss">Dismiss message</button>
   </article>
   <!-- Success message end -->
 
-  <script>
-    const signUpForm = document.getElementById("signUpForm");
-    const form = document.getElementById("emailForm");
-    const errorMessage = document.getElementById("error");
-    const emailInput = document.getElementById("email");
-
-    const successMessage = document.getElementById("successMessage");
-    const userEmail = document.getElementById("userEmail");
-    const dismiss = document.getElementById("dismiss");
-
-    emailInput.oninvalid = e => {
-      e.preventDefault();
-      const tomato = getComputedStyle(document.documentElement).getPropertyValue("--tomato");
-      emailInput.style.borderColor = tomato;
-      emailInput.style.WebkitTextFillColor = tomato;
-      emailInput.style.MozTextFillColor = tomato;
-      errorMessage.style.display = "block";
-    };
-
-    emailInput.addEventListener("focus", e => {
-      const grey = getComputedStyle(document.documentElement).getPropertyValue("--grey");
-      emailInput.style.borderColor = grey;
-      emailInput.style.WebkitTextFillColor = grey;
-      emailInput.style.MozTextFillColor = grey;
-    });
-
-    form.addEventListener("submit", e => {
-      e.preventDefault();
-      const formData = emailInput.value;
-      userEmail.innerHTML = formData;
-
-      signUpForm.style.display = "none";
-      successMessage.style.display = "block";
-      errorMessage.style.display = "none";
-      emailInput.value = "";
-    });
-
-    dismiss.addEventListener("click", e => {
-      successMessage.style.display = "none";
-      signUpForm.style.display = "block";
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
