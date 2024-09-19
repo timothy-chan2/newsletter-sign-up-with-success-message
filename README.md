@@ -38,7 +38,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [](https://your-live-site-url.com)
+- Live Site URL: [https://timothy-chan2.github.io/newsletter-sign-up-with-success-message/](https://timothy-chan2.github.io/newsletter-sign-up-with-success-message/)
 
 ## My process
 
