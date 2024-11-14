@@ -9,4 +9,9 @@ body {
 
 a {
   margin-top: 1em;
+  color: var(--purple);
+}
+
+a:visited {
+  color: var(--aqua);
 }
